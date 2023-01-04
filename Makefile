@@ -3,7 +3,7 @@
 help:
 	@echo 'usage: run | initrd'
 	
-run:
+run: activate-scripts
 	
 	#@echo $(NEWROOT)
 	
