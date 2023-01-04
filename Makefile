@@ -11,4 +11,4 @@ activate-scripts:
 	@chmod +x ./scripts/*
 	
 reinit-self:
-	@../launch-initrdCreator.sh
+	@cd ..; ./launch-initrdCreator.sh
