@@ -1,5 +1,6 @@
+source ../.config
 
-NEWROOT=./...
+#NEWROOT=./...
 
 help:
 	@echo 'usage: run | initrd'
