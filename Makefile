@@ -10,5 +10,5 @@ run: activate-scripts
 activate-scripts:
 	@chmod +x ./scripts/*
 	
-reinit-self:
-	@cd ..; ./launch-initrdCreator.sh
+reload-self:
+	@cd ..; ./initrdCreator/scripts/reload-self.sh
