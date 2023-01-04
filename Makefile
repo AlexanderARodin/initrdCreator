@@ -11,4 +11,4 @@ activate-scripts:
 	@chmod +x ./scripts/*
 	
 reinit-self:
-	@../lauch-initCreator.sh
+	@../launch-initCreator.sh
