@@ -1,4 +1,4 @@
-#!/bin/evn bash
+#!/bin/env bash
 
 echo 'loading..'
 pwd
