@@ -1,10 +1,11 @@
-source ../.config
-
 #NEWROOT=./...
 
 help:
 	@echo 'usage: run | initrd'
 	
 run:
-	@echo $(NEWROOT)
 	
+	#@echo $(NEWROOT)
+	
+activate-scripts:
+	@chmod +x ./scripts/*
