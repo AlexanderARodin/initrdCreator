@@ -20,7 +20,9 @@ mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
 echo
 echo '[raa msg]: the beginig..'
 
-/bin/sh
+exec setsid sh
+exec </dev/tty1 >/dev/tty1 2>&1
+exec sh
 
 echo
 echo '[raa msg]: ..the end'
