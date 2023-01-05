@@ -4,4 +4,4 @@ set -e
 
 source .config
 
-echo 'create-newroot.sh..'
+sudo mkdir -v $NEWROOT
