@@ -1,7 +1,7 @@
 #Makefile
 
 help:
-	@echo 'usage: run | initrd | reload-self | activate-scripts'
+	@echo 'usage: run | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
 run: activate-scripts configuration
 	@./scripts/run-chroot.sh
