@@ -15,18 +15,15 @@ configuration: activate-scripts busybox
 busybox: activate-scripts newroot
 	@./scripts/install-busybox.sh
 
-
 newroot: activate-scripts clean
 	@./scripts/create-newroot.sh
-	@./scripts/populate-newroot.sh
-	
 
 clean: activate-scripts
 	@./scripts/delete-newroot.sh
 
 
 reload-self: activate-scripts
-	@cd ..; pwd; ./initrdCreator/scripts/reload-self.sh
+	@cd ..; pwd; ./initrdCreator/scripts/reload-self.sh; pwd
 
 activate-scripts:
 	@chmod +x ./scripts/*
