@@ -8,6 +8,6 @@ git clone https://github.com/AlexanderARodin/initrdCreator.git
 pwd
 cd ./initrdCreator
 pwd
-#chmod +x ./scripts/*
+chmod +x ./scripts/*
 
 echo '..probably OK'
