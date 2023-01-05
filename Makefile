@@ -3,9 +3,9 @@
 help:
 	@echo 'usage: run | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
-run-sh: activate-scripts configuration
+run-shell-only: activate-scripts configuration
 	@./scripts/run-sh-chroot.sh
-run-init: activate-scripts configuration
+runinit: activate-scripts configuration
 	@./scripts/run-init-chroot.sh
 	
 install: activate-scripts configuration
@@ -17,8 +17,11 @@ configuration: activate-scripts busybox
 busybox: activate-scripts newroot
 	@./scripts/install-busybox.sh
 
-newroot: activate-scripts clean
+newroot: pull activate-scripts clean
 	@./scripts/create-newroot.sh
+
+pull:
+	@git pull
 
 clean: activate-scripts
 	@./scripts/delete-newroot.sh
