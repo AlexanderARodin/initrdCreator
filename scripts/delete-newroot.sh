@@ -4,4 +4,4 @@ set -e
 
 source .config
 
-echo 'delete-newroot.sh..'
+sudo rm -Rfv $NEWROOT
