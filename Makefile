@@ -3,8 +3,10 @@
 help:
 	@echo 'usage: run | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
-run: activate-scripts configuration
-	@./scripts/run-chroot.sh
+run-sh: activate-scripts configuration
+	@./scripts/run-sh-chroot.sh
+run-init: activate-scripts configuration
+	@./scripts/run-init-chroot.sh
 	
 install: activate-scripts configuration
 	@./scripts/initrd-producing.sh
