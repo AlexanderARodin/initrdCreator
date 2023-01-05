@@ -1,11 +1,11 @@
 #Makefile
 
 help:
-	@echo 'usage: runinit | run-shell-only | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
+	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
-run-shell-only: activate-scripts configuration
+run-shell: activate-scripts configuration
 	@./scripts/run-sh-chroot.sh
-runinit: activate-scripts configuration
+runINIT: activate-scripts configuration
 	@./scripts/run-init-chroot.sh
 	
 install: activate-scripts configuration
