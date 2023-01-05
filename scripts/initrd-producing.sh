@@ -7,4 +7,4 @@ source .config
 echo "pack initrd: $INITRD"
 cd $NEWROOT
 find . | cpio -o -H newc | gzip > $INITRD
-sudo cp -v $INITRD INSTALL_DIR
+sudo cp -v $INITRD $INSTALL_DIR
