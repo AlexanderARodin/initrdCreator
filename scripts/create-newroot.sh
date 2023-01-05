@@ -9,9 +9,9 @@ sudo mkdir -v $NEWROOT
 
 
 # system dirs
-sudo mkdir -v $NEWROOT/dev
-sudo mkdir -v $NEWROOT/proc
-sudo mkdir -v $NEWROOT/sys
+#sudo mkdir -v $NEWROOT/dev
+#sudo mkdir -v $NEWROOT/proc
+#sudo mkdir -v $NEWROOT/sys
 
 
 # software subdirs
