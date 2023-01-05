@@ -1,11 +1,9 @@
-#NEWROOT=./...
-
 help:
-	@echo 'usage: run | initrd'
+	@echo "usage: run | initrd | reload-self | activate-scripts"
 	
 run: activate-scripts
-	
-	#@echo $(NEWROOT)
+	@./scripts/run-chroot.sh
+
 	
 	
 reload-self: activate-scripts
@@ -14,3 +12,9 @@ reload-self: activate-scripts
 activate-scripts:
 	@chmod +x ./scripts/*
 	@ln -srfv ../config $(PWD)/.config
+
+
+
+
+
+
