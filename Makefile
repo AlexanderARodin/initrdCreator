@@ -23,7 +23,7 @@ clean: activate-scripts
 
 
 reload-self: activate-scripts
-	@./initrdCreator/scripts/reload-self.sh
+	@./scripts/reload-self.sh
 
 
 activate-scripts:
