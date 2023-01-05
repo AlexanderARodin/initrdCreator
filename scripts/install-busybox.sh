@@ -4,4 +4,5 @@ set -e
 
 source .config
 
-echo "install-busybox.sh"
+sudo cp -v $BUSYBOX ./newroot/bin/busybox
+sudo chroot $NEWROOT /bin/busybox --install -s
