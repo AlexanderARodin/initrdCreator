@@ -14,4 +14,4 @@ reload-self: activate-scripts
 
 activate-scripts:
 	@chmod +x ./scripts/*
-	@ln -srfv ../config ($PWD)/.config
+	@ln -srfv ../config $(PWD)/.config
