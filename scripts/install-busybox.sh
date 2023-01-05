@@ -4,5 +4,5 @@ set -e
 
 source .config
 
-sudo cp -v $BUSYBOX ./newroot/bin/busybox
+sudo cp -v $BUSYBOX $NEWROOT/bin/busybox
 sudo chroot $NEWROOT /bin/busybox --install -s
