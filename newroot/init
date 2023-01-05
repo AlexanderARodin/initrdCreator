@@ -21,8 +21,8 @@ mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
 echo
 echo '[raa msg]: the beginig..'
 
-setsid cttyhack sh
-#/bin/sh
+#setsid cttyhack sh
+/bin/busybox init
 
 echo
 echo '[raa msg]: ..the end'
