@@ -17,7 +17,7 @@ sudo mkdir -v $NEWROOT/sys
 # software subdirs
 sudo mkdir -v $NEWROOT/usr
 sudo mkdir -v $NEWROOT/usr/bin
-sudo ln -sv ./usr/bin $NEWROOT)/bin
+sudo ln -sv ./usr/bin $NEWROOT/bin
 
 sudo mkdir -v $NEWROOT/usr/sbin
 sudo ln -sv ./usr/sbin $NEWROOT/sbin
