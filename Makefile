@@ -23,8 +23,8 @@ clean: activate-scripts
 
 
 reload-self: activate-scripts
-	@cd ..; pwd; ./initrdCreator/scripts/reload-self.sh; pwd; cd ./initrdCreator; pwd
-	@chmod +x ./scripts/*
+	@cd ..; ./initrdCreator/scripts/reload-self.sh
+
 
 activate-scripts:
 	@chmod +x ./scripts/*
