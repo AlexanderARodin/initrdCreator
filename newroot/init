@@ -1,0 +1,18 @@
+#!/bin/sh
+mount -t sysfs sysfs /sys
+mount -t proc proc /proc
+mount -t devtmpfs udev /dev
+mknod -m 0640 /dev/tt0 c 4 0
+
+
+echo
+echo '[raa msg]: the beginig..'
+#sysctl -w kernel.printk="2 4 1 7"
+#echo '[raa msg]: 2'
+
+/bin/sh
+
+echo
+echo '[raa msg]: ..the end'
+echo '[raa msg]: '
+echo
