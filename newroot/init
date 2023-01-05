@@ -1,9 +1,17 @@
 #!/bin/sh
 
-# init system dirs
-mount -t sysfs sysfs /sys
-mount -t proc proc /proc
-mount -t devtmpfs udev /dev
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+# system dirs
+[ -d /dev ]  || mkdir -m 0755 /dev
+[ -d /sys ]  || mkdir /sys
+[ -d /proc ] || mkdir /proc
+[ -d /root ] || mkdir -m 0700 /root
+
+mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+mount -t proc     -o nodev,noexec,nosuid proc  /proc
+mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
+
 
 # start shell
 echo
