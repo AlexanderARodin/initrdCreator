@@ -2,5 +2,5 @@
 
 source .config
 
-echo "new root: $NEWROOT"
+echo "sh in new root: $NEWROOT"
 sudo chroot $NEWROOT /bin/sh
