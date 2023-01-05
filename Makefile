@@ -10,7 +10,7 @@ run: activate-scripts
 	
 reload-self: activate-scripts
 	@cd ..; pwd; ./initrdCreator/scripts/reload-self.sh
-	ln -sv ../config ./.config
+	ln -sv ../config .config
 
 activate-scripts:
 	@chmod +x ./scripts/*
