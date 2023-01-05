@@ -5,4 +5,7 @@ set -e
 source .config
 
 sudo cp -rv ./newroot/* $NEWROOT
-sudo chmod +x $NEWROOT/init
+
+if [ -f "$NEWROOT/init" ]; then
+	sudo chmod +x "$NEWROOT/init"
+fi
