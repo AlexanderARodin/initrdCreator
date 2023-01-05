@@ -22,7 +22,7 @@ echo
 echo '[raa msg]: the beginig..'
 
 #setsid cttyhack sh
-/bin/busybox
+exec /bin/busybox init
 
 echo
 echo '[raa msg]: ..the end'
