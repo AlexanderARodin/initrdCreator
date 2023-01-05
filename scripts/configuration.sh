@@ -4,4 +4,4 @@ set -e
 
 source .config
 
-echo "configuration.sh"
+sudo cp -v ./newroot/* $NEWROOT
