@@ -1,26 +1,25 @@
 #!/bin/sh
 
-#export PATH=/sbin:/usr/sbin:/bin:/usr/bin
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
-## system dirs
-#[ -d /dev ]  || mkdir -m 0755 /dev
-#[ -d /sys ]  || mkdir /sys
-#[ -d /proc ] || mkdir /proc
-#[ -d /root ] || mkdir -m 0700 /root
-#
-#
-#mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
-#mount -t proc     -o nodev,noexec,nosuid proc  /proc
-#
-#mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
-#mkdir /dev/pts
-#mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
+# system dirs
+[ -d /dev ]  || mkdir -m 0755 /dev
+[ -d /sys ]  || mkdir /sys
+[ -d /proc ] || mkdir /proc
+[ -d /root ] || mkdir -m 0700 /root
+
+
+mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+mount -t proc     -o nodev,noexec,nosuid proc  /proc
+
+mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
+mkdir /dev/pts
+mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
 
 
 # start shell
 echo
 echo '[raa msg]: the beginig..'
-
 
 exec /bin/busybox init
 
