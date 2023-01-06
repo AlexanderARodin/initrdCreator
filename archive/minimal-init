@@ -9,7 +9,7 @@ mount -t devtmpfs udev /dev
 echo
 echo '[raa msg]: the beginig..'
 
-/bin/sh
+setsid cttyhack /bin/sh
 
 echo
 echo '[raa msg]: ..the end'
