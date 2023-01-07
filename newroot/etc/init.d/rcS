@@ -3,5 +3,4 @@
 echo "Single user mode."
 echo "Exit will start multi-user."
 
-#setsid cttyhack /bin/sh
--/bin/sh
+setsid cttyhack /bin/sh
