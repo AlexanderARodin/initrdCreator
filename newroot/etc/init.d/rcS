@@ -1,3 +1,5 @@
 #!/bin/env sh
 
 echo "inside empty (yet) rcS.."
+
+setsid cttyhack /bin/sh
