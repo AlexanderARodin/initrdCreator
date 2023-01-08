@@ -1,8 +1,9 @@
 #!/bin/env bash
 
+echo "PID: $$"
 
-trap echo -e "\n--> sig-1\n"; SIGUSR1
-trap echo -e "\n--> sig-2\n"; SIGUSR2
+trap 'echo -e "\n--> sig-1 ";' SIGUSR1
+trap 'echo -e "\n--> sig-2 ";' SIGUSR2
 
 while true; do
 	echo -n "."
