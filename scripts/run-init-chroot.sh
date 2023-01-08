@@ -3,7 +3,7 @@
 source .config
 
 echo "run init into new root: $NEWROOT"
-sudo chroot $NEWROOT /init
+sudo chroot $NEWROOT /init $1
 
 # unmount pseudo-system
 sudo umount $NEWROOT/dev/pts
