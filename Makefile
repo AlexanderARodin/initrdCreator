@@ -6,7 +6,7 @@ help:
 run-shell: activate-scripts configuration
 	@./scripts/run-chroot.sh
 runINIT: activate-scripts configuration
-	@./scripts/run-init-chroot.sh
+	@./scripts/run-init-chroot.sh /bin/sh
 	
 install: activate-scripts configuration
 	@./scripts/initrd-producing.sh
