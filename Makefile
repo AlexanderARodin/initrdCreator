@@ -3,12 +3,9 @@
 help:
 	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
-runner: activate-scripts
-	@./scripts/run-init-chroot.sh /bin/sh
-
-run-shell: activate-scripts configuration
+run-shell: activate-scripts
 	@./scripts/run-chroot.sh
-runINIT: activate-scripts configuration
+runINIT: activate-scripts
 	@./scripts/run-init-chroot.sh /bin/sh
 	
 install: activate-scripts configuration
