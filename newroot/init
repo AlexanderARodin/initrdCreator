@@ -20,7 +20,7 @@ mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
 # start shell
 echo
 echo '[raa msg]: the beginig..'
-
+echo "RRRRRRRRRRRRRRRRR: $# $1"
 if [ $# ]; then
 	exec /bin/busybox init
 else
