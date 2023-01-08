@@ -3,11 +3,11 @@
 source .config
 
 
-if [ $# ]; then
-	echo "start default: /bin/sh"
-else
-	echo "start: $1"
-fi
 
-#echo "sh in new root: $NEWROOT"
+echo "run pseudo-init in new root: $NEWROOT"
+
+sudo cp -v ./support/pseudo-init $NEWROOT
+sudo chroot $NEWROOT /pseudo-init
+sudo rm -vf $NEWROOT/pseudo-init
+
 #sudo chroot $NEWROOT /bin/sh
