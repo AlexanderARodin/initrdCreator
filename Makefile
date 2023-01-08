@@ -4,7 +4,7 @@ help:
 	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
 run-shell: activate-scripts configuration
-	@./scripts/run-sh-chroot.sh
+	@./scripts/run-chroot.sh
 runINIT: activate-scripts configuration
 	@./scripts/run-init-chroot.sh
 	
