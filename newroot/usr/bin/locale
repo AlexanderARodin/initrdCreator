@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "C"
+echo "C.UTF-8"
+echo "en_US.utf8"
+echo "POSIX"
