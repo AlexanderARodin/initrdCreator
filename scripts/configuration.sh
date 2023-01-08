@@ -7,14 +7,13 @@ source .config
 sudo cp -rv ./newroot/* "$NEWROOT"
 
 if [ -f "$NEWROOT/init" ]; then
-	sudo chmod +x "$NEWROOT/init"
+	sudo chmod -v +x "$NEWROOT/init"
 fi
 if [ -f "$NEWROOT/deployment.sh" ]; then
-	sudo chmod +x "$NEWROOT/deployment.sh"
-	sudo chmod +x "$NEWROOT/tester.sh"
+	sudo chmod -v +x "$NEWROOT/deployment.sh"
 fi
 
 
 
 #sudo cp -v "$TMUX" "$NEWROOT/bin"
-#sudo chmod +x "$NEWROOT/bin/tmux"
+#sudo chmod -v +x "$NEWROOT/bin/tmux"
