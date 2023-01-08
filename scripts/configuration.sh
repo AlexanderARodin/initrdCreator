@@ -11,6 +11,7 @@ if [ -f "$NEWROOT/init" ]; then
 fi
 if [ -f "$NEWROOT/deployment.sh" ]; then
 	sudo chmod +x "$NEWROOT/deployment.sh"
+	sudo chmod +x "$NEWROOT/tester.sh"
 fi
 
 
