@@ -9,9 +9,9 @@ sudo cp -rv ./newroot/* "$NEWROOT"
 if [ -f "$NEWROOT/init" ]; then
 	sudo chmod +x "$NEWROOT/init"
 fi
-if [ -f "$NEWROOT/etc/init.d/rcS" ]; then
-	sudo chmod +x "$NEWROOT/etc/init.d/rcS"
-fi
 
 sudo cp -v "$TMUX" "$NEWROOT/bin"
 sudo chmod +x "$NEWROOT/bin/tmux"
+if [ -f "$NEWROOT/bin/locale" ]; then
+	sudo chmod +x "$NEWROOT/bin/locale"
+fi
