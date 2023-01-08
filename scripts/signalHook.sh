@@ -1,7 +1,8 @@
 #!/bin/env bash
 
-set -e
 
-source .config
 
-sudo cp -rv ./newroot/* "$NEWROOT"
+
+while true; do
+	echo -n "."
+done
