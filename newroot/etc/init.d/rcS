@@ -1,6 +1,8 @@
 #!/bin/env sh
 
-echo "Single user mode."
-echo "Exit will start multi-user."
+echo
+echo "Single-user mode."
+echo "Exit will start multi-user.."
 
 setsid cttyhack /bin/sh
+echo "..end Single-User mode."
