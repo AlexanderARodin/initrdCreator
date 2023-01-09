@@ -1,1 +1,9 @@
+#!/bin/sh
 
+exec 2>&1
+
+exec echo "getty-6!!.."
+
+exec setsid /bin/sh -c 'exec login <> /dev/tty6 >&0 2>&1'
+
+exec echo "..out of GETTY-6!!!!!!!!!!!!!11111111"
