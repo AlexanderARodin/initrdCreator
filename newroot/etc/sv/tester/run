@@ -5,4 +5,5 @@ exec 2>&1
 exec echo "ohhhh!!.."
 
 #exec /tester.sh 
-exec setsid /sbin/agetty --nohostname tty5 38400 linux
+#exec setsid /sbin/agetty --nohostname tty5 38400 linux
+exec setsid /sbin/getty tty6 38400 raaNux
