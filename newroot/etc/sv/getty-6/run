@@ -1,9 +1,11 @@
 #!/bin/sh
+TTY=8
+DISP="<> /dev/tty$TTY >&0 2>&1
 
 exec 2>&1
 
 echo "getty-6!!.."
 
-setsid /bin/sh -c 'exec login <> /dev/tty6 >&0 2>&1'
+setsid /bin/sh -c 'exec /etc/sc/run $DISP'
 
 echo "..out of GETTY-6!!!!!!!!!!!!!11111111"
