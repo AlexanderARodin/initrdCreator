@@ -1,5 +1,8 @@
 #!/bin/sh
 
-echo "ohhhh!!.."
+exec 2>&1
 
-exec /tester.sh 
+exec echo "ohhhh!!.."
+
+#exec /tester.sh 
+exec setsid /sbin/agetty --nohostname tty5 38400 linux
