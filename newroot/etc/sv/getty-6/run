@@ -6,6 +6,6 @@ exec 2>&1
 
 echo "getty-6!!.."
 
-setsid /bin/sh -c 'exec /etc/sc/run $DISP'
+setsid /bin/sh -c 'exec /etc/sv/run $DISP'
 
 echo "..out of GETTY-6!!!!!!!!!!!!!11111111"
