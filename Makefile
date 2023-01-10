@@ -46,8 +46,6 @@ activate-scripts:
 	
 # #######################################
 # others
-pull:
-	@git pull
 
 reload-self: activate-scripts
 	@./scripts/xxxx-reload-self.sh
