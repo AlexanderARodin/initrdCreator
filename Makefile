@@ -28,7 +28,7 @@ busybox: activate-scripts newroot
 
 newroot: activate-scripts clean
 	@echo '[MAKE NEWROOT]'
-	@./scripts/xx20-create-newroot.sh
+	@./scripts/xx10-create-minimal-root.sh
 	
 clean: activate-scripts
 	@echo '[MAKE CLEAN]'
