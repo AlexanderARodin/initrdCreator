@@ -1,7 +1,7 @@
 function unmountAll {
-  echo 'test: unmountAll'
-sudo umount $NEWROOT/dev/pts
-sudo umount $NEWROOT/dev
-  sudo umount $NEWROOT/proc
-  sudo umount $NEWROOT/sys
+  echo '-->[try to unmount system VFS'
+	sudo umount $NEWROOT/dev/pts
+	sudo umount $NEWROOT/dev
+	sudo umount $NEWROOT/proc
+	sudo umount $NEWROOT/sys
 }
