@@ -19,6 +19,7 @@ sudo ln -sv ./usr/sbin $NEWROOT/sbin
 case $TYPE in
 	MINIMAL)
 		sudo cp -rv ./minimal-root/init "$NEWROOT"
+		sudo chmod -v +x "$NEWROOT/init"
 		;;
 	*)
 		echo "unknown type: $TYPE"
