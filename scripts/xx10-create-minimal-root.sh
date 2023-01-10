@@ -16,15 +16,12 @@ sudo ln -sv ./usr/bin $NEWROOT/bin
 sudo mkdir -v $NEWROOT/usr/sbin
 sudo ln -sv ./usr/sbin $NEWROOT/sbin
 
-sudo mkdir -v $NEWROOT/usr/lib
-sudo ln -sv ./usr/lib $NEWROOT/lib
-
-# config subdirs
-sudo mkdir -v $NEWROOT/etc
-
-# home dir
-sudo mkdir -v $NEWROOT/home
-
-# var subdirs
-sudo mkdir -v $NEWROOT/var
-sudo mkdir -v $NEWROOT/var/service
+case $TYPE in
+	MINIMAL)
+		sudo cp -rv ./minimal-root/init "$NEWROOT"
+		;;
+	*)
+		echo "unknown type: $TYPE"
+		return 1
+		;;
+esac
