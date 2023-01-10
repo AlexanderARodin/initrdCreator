@@ -7,7 +7,7 @@ source ./scripts/.lib
 BindSystemVFS
 
 echo "mounted run into new root: $NEWROOT"
-sudo chroot $NEWROOT /bin/sh
+sudo chroot "$NEWROOT" /bin/sh
 
 # unmount & remove pseudo-system
 RemoveSystemVFS
