@@ -3,6 +3,6 @@
 source .config
 source ./scripts/.lib
 
-unmountAll
+unmountSystemVFS
 
 sudo rm -Rfv $NEWROOT
