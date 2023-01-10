@@ -1,4 +1,4 @@
-function unmountAll {
+function unmountSystemVFS {
   echo '-->[try to unmount system VFS]'
 	sudo umount $NEWROOT/dev/pts
 	sudo umount $NEWROOT/dev
