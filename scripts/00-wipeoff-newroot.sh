@@ -1,6 +1,7 @@
 #!/bin/env bash
 
 source .config
+source ./scripts/.lib
 
 sudo umount $NEWROOT/dev/pts
 sudo umount $NEWROOT/dev
