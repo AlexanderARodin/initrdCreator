@@ -6,11 +6,13 @@ config:
 	@vi .config
 	
 # #######################################
-# testing 
-run-shell: activate-scripts busybox
-	@./scripts/xxxx-run-chroot.sh
-runINIT: activate-scripts busybox
-	@./scripts/xxxx-run-pseudoINIT-chroot.sh /bin/sh
+# testing
+run-shell: activate-scripts
+	@./scripts/xxxx-chroot-run-shell.sh
+run-script: activate-scripts
+	@./scripts/xxxx-chroot-run-script.sh
+run-mounted: activate-scripts
+	@./scripts/xxxx-chroot-run-mounted.sh
 	
 # #######################################
 # main chain
