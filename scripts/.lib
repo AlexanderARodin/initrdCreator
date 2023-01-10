@@ -1,7 +1,12 @@
-function unmountSystemVFS {
-  echo '-->[try to unmount system VFS]'
+function RemoveSystemVFS {
+  echo '-->[try to unmount system VFS devs]'
 	sudo umount $NEWROOT/dev/pts
 	sudo umount $NEWROOT/dev
 	sudo umount $NEWROOT/proc
 	sudo umount $NEWROOT/sys
+	
+  echo '-->[try to remove system VFS dirs]'
+	sudo rm -Rvf $NEWROOT/dev
+	sudo rm -Rvf $NEWROOT/proc
+	sudo rm -Rvf $NEWROOT/sys
 }
