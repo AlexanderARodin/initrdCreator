@@ -3,39 +3,45 @@
 help:
 	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
+# #######################################
+# testing 
 run-shell: activate-scripts
-	@./scripts/rc-run-chroot.sh
+	@./scripts/xxxx-run-chroot.sh
 runINIT: activate-scripts
-	@./scripts/ri-run-init-chroot.sh /bin/sh
+	@./scripts/xxxx-run-init-chroot.sh /bin/sh
 	
+# #######################################
+# main chain
 install: activate-scripts configuration
 	@echo '[MAKE INSTALL]'
-	@./scripts/90-initrd-producing.sh
+	@./scripts/xx90-initrd-producing.sh
 	
 configuration: activate-scripts busybox
 	@echo '[MAKE CONFIGURATION]'
-	@./scripts/40-configuration.sh
+	@./scripts/xx40-configuration.sh
 
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
-	@./scripts/30-install-busybox.sh
+	@./scripts/xx30-install-busybox.sh
 
-newroot: pull activate-scripts clean
+newroot: activate-scripts clean
 	@echo '[MAKE NEWROOT]'
-	@./scripts/20-create-newroot.sh
+	@./scripts/xx20-create-newroot.sh
+	
+clean: activate-scripts
+	@echo '[MAKE CLEAN]'
+	@./scripts/xx00-wipeoff-newroot.sh
 
+activate-scripts:
+	@chmod +x ./scripts/*.sh
+	
+	
+# #######################################
+# others
 pull:
 	@git pull
 
-clean: activate-scripts
-	@echo '[MAKE CLEAN]'
-	@./scripts/00-wipeoff-newroot.sh
-
-
 reload-self: activate-scripts
-	@./scripts/as-reload-self.sh
+	@./scripts/xxxx-reload-self.sh
 
 
-activate-scripts:
-	@chmod +x ./scripts/*
-	#@ln -srfv ../config $(PWD)/.config
