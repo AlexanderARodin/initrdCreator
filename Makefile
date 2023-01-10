@@ -24,7 +24,7 @@ configuration: activate-scripts busybox
 
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
-	@./scripts/xx30-install-busybox.sh
+	@./scripts/xx20-install-busybox.sh
 
 newroot: activate-scripts clean
 	@echo '[MAKE NEWROOT]'
