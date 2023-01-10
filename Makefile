@@ -19,8 +19,8 @@ install: activate-scripts processing
 	@./scripts/xx90-initrd-producing.sh
 	
 processing: activate-scripts busybox
-	@echo '[MAKE CONFIGURATION]'
-	#@./scripts/xx40-configuration.sh
+	@echo '[MAKE PROCESSING]'
+	@./scripts/xx50-processsing.sh
 
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
