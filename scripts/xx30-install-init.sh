@@ -9,7 +9,7 @@ case $INIT in
 		sudo cp -rv ./inits-type/min-init "$NEWROOT/init"
 		;;
 	*)
-		echo "unknown INIT-TYPE: $INIT"
+		echo "unknown INIT-TYPE: $INIT" >&2
 		exit 1
 		;;
 esac
