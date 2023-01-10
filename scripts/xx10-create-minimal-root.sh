@@ -15,12 +15,3 @@ sudo ln -sv ./usr/bin $NEWROOT/bin
 
 sudo mkdir -v $NEWROOT/usr/sbin
 sudo ln -sv ./usr/sbin $NEWROOT/sbin
-
-case $TYPE in
-	MINIMAL)
-		sudo cp -rv ./minimal-root/init "$NEWROOT"
-		sudo chmod -v +x "$NEWROOT/init"
-		;;
-	*)
-		;;
-esac
