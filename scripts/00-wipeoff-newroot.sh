@@ -3,6 +3,8 @@
 source .config
 source ./scripts/.lib
 
+unmountAll
+
 sudo umount $NEWROOT/dev/pts
 sudo umount $NEWROOT/dev
 sudo umount $NEWROOT/proc
