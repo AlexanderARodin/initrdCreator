@@ -10,7 +10,7 @@ config:
 run-shell: activate-scripts
 	@./scripts/xxxx-run-chroot.sh
 runINIT: activate-scripts
-	@./scripts/xxxx-run-pseudoINIT-chroot.sh /bin/sh
+	@./scripts/xxxx-run-pseudoINIT-chroot.sh
 	
 # #######################################
 # main chain
