@@ -22,7 +22,5 @@ case $TYPE in
 		sudo chmod -v +x "$NEWROOT/init"
 		;;
 	*)
-		echo "unknown type: $TYPE"
-		return 1
 		;;
 esac
