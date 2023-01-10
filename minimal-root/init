@@ -1,41 +1,23 @@
 #!/bin/sh
 
-function create_main_system_dirs {
-	# system dirs
-	[ -d /proc ] || mkdir /proc
-	[ -d /sys ]  || mkdir /sys
-	[ -d /dev ]  || mkdir -m 0755 /dev
-}
-function do_pts_mounting {
-	[ -d /dev/pts ] || mkdir /dev/pts
-	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
-}
-function do_system_mounting {
-	creat_main_system_dirs
-	
-	mount -t proc     -o nodev,noexec,nosuid proc  /proc
-	mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
-	mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
-	
-	do_pts_mounting
-}
-function start_shell {
-	echo
-	echo '[raa msg]: the beginig..'
-	# start shell
-	exec setsid cttyhack /bin/sh
-	echo
-	echo '[raa msg]: ..the end'
-	echo
-}
+# system dirs
+[ -d /proc ] || mkdir /proc
+[ -d /sys ]  || mkdir /sys
+[ -d /dev ]  || mkdir -m 0755 /dev
 
+mount -t proc     -o nodev,noexec,nosuid proc  /proc
+mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
 
-if [ $# -eq 0 ]; then
-	do_system_mounting
-	start_shell
-else
-	exec "$1"
-fi
+[ -d /dev/pts ] || mkdir /dev/pts
+mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
 
+echo
+echo '[raa msg]: the beginig..'
 
+# start shell
+exec setsid cttyhack /bin/sh
 
+echo
+echo '[raa msg]: ..the end'
+echo
