@@ -1,32 +1,19 @@
 #!/bin/sh
 
-export PATH=/sbin:/usr/sbin:/bin:/usr/bin
-
 # system dirs
-[ -d /dev ]  || mkdir -m 0755 /dev
-[ -d /sys ]  || mkdir /sys
 [ -d /proc ] || mkdir /proc
+[ -d /sys ]  || mkdir /sys
+[ -d /dev ]  || mkdir -m 0755 /dev
+
+mount -t proc     -o nodev,noexec,nosuid proc  /proc
+mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
+
+	[ -d /dev/pts ] || mkdir /dev/pts
+	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
+
+
+# others
 [ -d /root ] || mkdir -m 0700 /root
 
-
-mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
-mount -t proc     -o nodev,noexec,nosuid proc  /proc
-
-mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
-mkdir /dev/pts
-mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts # || true
-
-
-# start shell
-echo
-echo '[raa msg]: the beginig..'
-
-if [ $# -eq 0 ]; then
-	exec /bin/busybox init
-else
-	exec "$1"
-fi
-
-echo
-echo '[raa msg]: ..the end'
-echo
+exec /bin/busybox init
