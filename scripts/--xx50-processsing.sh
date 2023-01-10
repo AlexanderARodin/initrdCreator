@@ -4,6 +4,19 @@ set -e
 
 source .config
 
+
+case $TYPE in
+	MINIMAL)
+		exit 0
+		;;
+	*)
+		echo "unknown type: $TYPE"
+		return 1
+		;;
+esac
+
+
+
 sudo cp -rv ./newroot/* "$NEWROOT"
 
 if [ -f "$NEWROOT/init" ]; then
