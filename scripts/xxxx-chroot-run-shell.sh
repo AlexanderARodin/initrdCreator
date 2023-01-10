@@ -3,4 +3,4 @@
 source .config
 
 echo "run SH in new root: $NEWROOT"
-sudo chroot $NEWROOT /bin/sh
+sudo chroot "$NEWROOT" /bin/sh
