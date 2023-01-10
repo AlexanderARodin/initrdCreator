@@ -1,7 +1,7 @@
 #Makefile
 
 help:
-	@echo 'usage: config | runINIT | run-shell | install | processing | busybox | newroot | clean | reload-self | activate-scripts'
+	@echo 'usage: config | runINIT | run-shell | install | processing | insert-init | busybox | newroot | clean | reload-self | activate-scripts'
 config:
 	@vi .config
 	
@@ -20,10 +20,14 @@ install: activate-scripts processing
 	@echo '[MAKE INSTALL]'
 	@./scripts/xx90-initrd-producing.sh
 	
-processing: activate-scripts busybox
+processing: activate-scripts insert-init
 	@echo '[MAKE PROCESSING]'
 	#@./scripts/xx50-processsing.sh
 
+insert-init: activate-scripts busybox
+	@echo '[MAKE INSERTING INIT]'
+	@./scripts/xx30-install-init.sh
+	
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
 	@./scripts/xx20-install-busybox.sh
