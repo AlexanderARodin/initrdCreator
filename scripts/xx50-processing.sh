@@ -11,4 +11,4 @@ done
 
 sudo chmod -Rv +x "$NEWROOT/SCRIPTS/"
 
-sudo chroot "$NEWROOT"  run-parts --test /SCRIPTS
+sudo chroot "$NEWROOT"  run-parts /SCRIPTS
