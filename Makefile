@@ -2,6 +2,8 @@
 
 help:
 	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
+config:
+	vi .config
 	
 # #######################################
 # testing 
