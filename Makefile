@@ -1,9 +1,9 @@
 #Makefile
 
 help:
-	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
+	@echo 'usage: config | runINIT | run-shell | install | processing | busybox | newroot | clean | reload-self | activate-scripts'
 config:
-	vi .config
+	@vi .config
 	
 # #######################################
 # testing 
@@ -14,13 +14,13 @@ runINIT: activate-scripts busybox
 	
 # #######################################
 # main chain
-install: activate-scripts configuration
+install: activate-scripts processing
 	@echo '[MAKE INSTALL]'
 	@./scripts/xx90-initrd-producing.sh
 	
-configuration: activate-scripts busybox
+processing: activate-scripts busybox
 	@echo '[MAKE CONFIGURATION]'
-	@./scripts/xx40-configuration.sh
+	#@./scripts/xx40-configuration.sh
 
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
