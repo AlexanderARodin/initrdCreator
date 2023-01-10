@@ -29,7 +29,7 @@ pull:
 
 clean: activate-scripts
 	@echo '[MAKE CLEAN]'
-	@./scripts/10-delete-newroot.sh
+	@./scripts/00-wipeoff-newroot.sh
 
 
 reload-self: activate-scripts
