@@ -22,7 +22,7 @@ install: activate-scripts processing
 	
 processing: activate-scripts insert-init
 	@echo '[MAKE PROCESSING]'
-	#@./scripts/xx50-processsing.sh
+	@./scripts/xx50-processing.sh
 
 insert-init: activate-scripts busybox
 	@echo '[MAKE INSERTING INIT]'
