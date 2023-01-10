@@ -13,9 +13,9 @@ function RemoveSystemVFS {
 
 function BindSystemVFS {
 	echo '-->[try to create system VFS dirs]'
-		sudo [ -d "$NEWROOT/proc" ] || mkdir "$NEWROOT/proc"
-		sudo [ -d "$NEWROOT/sys" ]  || mkdir "$NEWROOT/sys"
-		sudo [ -d "$NEWROOT/dev" ]  || mkdir -m 0755 "$NEWROOT/dev"
+		[ -d "$NEWROOT/proc" ] || sudo mkdir "$NEWROOT/proc"
+		[ -d "$NEWROOT/sys" ]  || sudo mkdir "$NEWROOT/sys"
+		[ -d "$NEWROOT/dev" ]  || sudo mkdir -m 0755 "$NEWROOT/dev"
 
 	echo '-->[try to bind system VFS devs]'
 		sudo mount --bind /proc "$NEWROOT/proc"
