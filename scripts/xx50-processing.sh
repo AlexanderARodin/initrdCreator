@@ -4,7 +4,7 @@ set -e
 
 source .config
 
-for COMPONENT in COMPONETS; do
+for COMPONENT in $COMPONETS; do
 	echo "--> component: $COMPONENT"
 done
 
