@@ -20,7 +20,7 @@ install: activate-scripts processing
 	
 processing: activate-scripts busybox
 	@echo '[MAKE PROCESSING]'
-	@./scripts/xx50-processsing.sh
+	#@./scripts/xx50-processsing.sh
 
 busybox: activate-scripts newroot
 	@echo '[MAKE BUSYBOX]'
