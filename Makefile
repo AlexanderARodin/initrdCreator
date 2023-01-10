@@ -46,6 +46,6 @@ pull:
 	@git pull
 
 reload-self: activate-scripts
-	@./scripts/iiii-reload-self.sh
+	@./scripts/xxxx-reload-self.sh
 
 
