@@ -9,14 +9,14 @@ mount -t proc     -o nodev,noexec,nosuid proc  /proc
 mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
 mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
 
-[ -d /dev/pts ] || mkdir /dev/pts
-mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
+	[ -d /dev/pts ] || mkdir /dev/pts
+	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
 
 echo
 echo '[raa msg]: the beginig..'
 
-# start shell
-exec setsid cttyhack /bin/sh
+	# start shell
+	exec setsid cttyhack /bin/sh
 
 echo
 echo '[raa msg]: ..the end'
