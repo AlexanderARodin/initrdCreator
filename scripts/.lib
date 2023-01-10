@@ -1,12 +1,24 @@
 function RemoveSystemVFS {
-  echo '-->[try to unmount system VFS devs]'
-	sudo umount $NEWROOT/dev/pts
-	sudo umount $NEWROOT/dev
-	sudo umount $NEWROOT/sys
-	sudo umount $NEWROOT/proc
+	echo '-->[try to unmount system VFS devs]'
+		#sudo umount "$NEWROOT/dev/pts"
+		sudo umount "$NEWROOT/dev"
+		sudo umount "$NEWROOT/sys"
+		sudo umount "$NEWROOT/proc"
 	
-  echo '-->[try to remove system VFS dirs]'
-	sudo rm -Rvf $NEWROOT/dev
-	sudo rm -Rvf $NEWROOT/sys
-	sudo rm -Rvf $NEWROOT/proc
+	echo '-->[try to remove system VFS dirs]'
+		sudo rm -Rvf "$NEWROOT/dev"
+		sudo rm -Rvf "$NEWROOT/sys"
+		sudo rm -Rvf "$NEWROOT/proc"
+}
+
+function BindSystemVFS {
+	echo '-->[try to create system VFS dirs]'
+		[ -d "$NEWROOT/proc" ] || mkdir "$NEWROOT/proc"
+		[ -d "$NEWROOT/sys" ]  || mkdir "$NEWROOT/sys"
+		[ -d "$NEWROOT/dev" ]  || mkdir -m 0755 "$NEWROOT/dev"
+
+	echo '-->[try to bind system VFS devs]'
+		mount --bind /proc "$NEWROOT/proc"
+		mount --bind /sys "$NEWROOT/sys"
+		mount --bind /dev "$NEWROOT/dev"
 }
