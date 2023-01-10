@@ -7,9 +7,9 @@ config:
 	
 # #######################################
 # testing 
-run-shell: activate-scripts
+run-shell: activate-scripts busybox
 	@./scripts/xxxx-run-chroot.sh
-runINIT: activate-scripts
+runINIT: activate-scripts busybox
 	@./scripts/xxxx-run-pseudoINIT-chroot.sh /bin/sh
 	
 # #######################################
