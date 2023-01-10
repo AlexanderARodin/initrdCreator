@@ -4,31 +4,31 @@ help:
 	@echo 'usage: runINIT | run-shell | install | configuration | busybox | newroot | clean | reload-self | activate-scripts'
 	
 run-shell: activate-scripts
-	@./scripts/run-chroot.sh
+	@./scripts/rc-run-chroot.sh
 runINIT: activate-scripts
-	@./scripts/run-init-chroot.sh /bin/sh
+	@./scripts/ri-run-init-chroot.sh /bin/sh
 	
 install: activate-scripts configuration
-	@./scripts/initrd-producing.sh
+	@./scripts/90-initrd-producing.sh
 	
 configuration: activate-scripts busybox
-	@./scripts/configuration.sh
+	@./scripts/40-configuration.sh
 
 busybox: activate-scripts newroot
-	@./scripts/install-busybox.sh
+	@./scripts/30-install-busybox.sh
 
 newroot: pull activate-scripts clean
-	@./scripts/create-newroot.sh
+	@./scripts/20-create-newroot.sh
 
 pull:
 	@git pull
 
 clean: activate-scripts
-	@./scripts/delete-newroot.sh
+	@./scripts/10-delete-newroot.sh
 
 
 reload-self: activate-scripts
-	@./scripts/reload-self.sh
+	@./scripts/as-reload-self.sh
 
 
 activate-scripts:
