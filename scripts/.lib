@@ -1,5 +1,5 @@
 function unmountAll {
-  echo '-->[try to unmount system VFS'
+  echo '-->[try to unmount system VFS]'
 	sudo umount $NEWROOT/dev/pts
 	sudo umount $NEWROOT/dev
 	sudo umount $NEWROOT/proc
