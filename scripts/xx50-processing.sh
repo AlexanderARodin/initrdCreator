@@ -9,4 +9,6 @@ for COMPONENT in $COMPONENTS; do
 	sudo cp -rv ./components/$COMPONENT/* "$NEWROOT"
 done
 
+sudo chmod -v +x "$NEWROOT/SCRIPTS/*"
 
+sudo chroot "$NEWROOT"  run-parts --test /SCRIPTS
