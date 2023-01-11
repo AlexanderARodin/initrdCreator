@@ -2,7 +2,7 @@
 
 TTY="tty8"
 DISP="<> /dev/$TTY >&0 2>&1"
-MSG="It's $TTY"
+MSG="It is $TTY"
 
 exec 2>&1
 
