@@ -1,8 +1,0 @@
-#!/bin/sh
-
-clear
-echo "info inside raaGetty"
-login
-
-
-echo "see you.. maybe"
