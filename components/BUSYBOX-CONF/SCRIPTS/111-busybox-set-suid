@@ -1,1 +1,8 @@
+#!/bin/sh
+set -e
 
+#sudo chown 0.0 /etc/busybox.conf
+#sudo chmod 600 /etc/busybox.conf
+
+sudo chown 0.0  /bin/busybox
+sudo chmod 4755 /bin/busybox
