@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TTY="tty1"
+TTY="tty8"
 DISP="<> /dev/$TTY >&0 2>&1"
 MSG="It's $TTY"
 
