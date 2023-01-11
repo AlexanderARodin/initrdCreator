@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+[ -d /etc ]         || mkdir /etc
+[ -d /etc/sv ]      || mkdir /etc/sv
+
+[ -d /var ]         || mkdir /var
+[ -d /var/service ] || mkdir /var/service
