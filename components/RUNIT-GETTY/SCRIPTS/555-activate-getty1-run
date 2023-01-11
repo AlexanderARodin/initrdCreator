@@ -1,0 +1,2 @@
+#!/bin/sh
+chmod -Rv +x /etc/sv/getty-1/run
