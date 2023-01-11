@@ -9,8 +9,6 @@ config:
 # testing
 run-shell: activate-scripts
 	@./scripts/xxxx-chroot-run-shell.sh
-run-script: activate-scripts
-	@./scripts/xxxx-chroot-run-script.sh
 run-mounted: activate-scripts
 	@./scripts/xxxx-chroot-run-mounted.sh
 	
