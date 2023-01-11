@@ -1,7 +1,7 @@
 #Makefile
 
 help:
-	@echo 'usage: config | runINIT | run-shell | install | processing | insert-init | busybox | newroot | clean | reload-self | activate-scripts'
+	@echo 'usage: config | run-mounted | run-shell | install | processing | insert-init | busybox | newroot | clean | reload-self | activate-scripts'
 config:
 	@vi .config
 	
