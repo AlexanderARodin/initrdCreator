@@ -11,4 +11,4 @@ done
 
 sudo chmod -Rv +x "$NEWROOT/SCRIPTS/"
 sudo chroot "$NEWROOT"  run-parts /SCRIPTS
-sudo rm -Rvf "$NEWROOT/SCRIPTS"
+sudo rm -Rvf "$NEWROOT/SCRIPTS" || true
