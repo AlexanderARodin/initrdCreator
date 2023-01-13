@@ -6,7 +6,7 @@ source .config
 
 case $INIT in
 	MIN)
-		sudo cp -rv ./inits-type/min-init "$NEWROOT/entry"
+		sudo cp -rv ./inits-type/min-init "$NEWROOT/init"
 		;;
 	BUSYBOX)
 		sudo cp -rv ./inits-type/busybox-init "$NEWROOT/init"
