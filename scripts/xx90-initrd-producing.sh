@@ -4,7 +4,7 @@ set -e
 
 source .config
 
-sudo mv -v "$NEWROOT/init" "$NEWROOT/entry"
+#sudo mv -v "$NEWROOT/init" "$NEWROOT/entry"
 
 echo "pack initrd: $INITRD"
 cd $NEWROOT
