@@ -1,10 +1,39 @@
 #!/bin/sh
 
-echo 'in init!!'
+
+function do_mount_proc {
+	echo "do_mount_proc"
+}
+
+
+
 echo
+echo "RAADBG=$RAADBG"
+for ACT in RAADBG; do
+	echo "-->$ACT"
+	case $ACT in
+		'MOUNTPROC')
+			do_mount_proc
+			;;
+		*)
+			echo "unsupported.. IGNORED"
+			;;
+	esac
+done
 
-# pars args
-echo $*
 
-echo 'in shell'
+echo 'RUN SHELL'
 exec setsid cttyhack /bin/sh
+exit 0
+
+# system dirs
+[ -d /proc ] || mkdir /proc
+[ -d /sys ]  || mkdir /sys
+[ -d /dev ]  || mkdir -m 0755 /dev
+
+mount -t proc     -o nodev,noexec,nosuid proc  /proc
+mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
+
+	[ -d /dev/pts ] || mkdir /dev/pts
+	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
