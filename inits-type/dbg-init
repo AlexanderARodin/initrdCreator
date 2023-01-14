@@ -48,6 +48,9 @@ for ACT in $RAADBG; do
 		'DEVPTS')
 			do_mount_devpts
 			;;
+		'SHELL')
+			do_run_shell
+			;;
 		*)
 			echo "unsupported.. IGNORED"
 			;;
