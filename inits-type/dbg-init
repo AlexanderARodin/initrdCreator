@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo 'in init!!'
+echo
+
+# pars args
+echo $*
+
+echo 'in shell'
+exec setsid cttyhack /bin/sh
