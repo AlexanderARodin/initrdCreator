@@ -9,7 +9,7 @@ function do_mount_proc {
 
 echo
 echo "RAADBG=$RAADBG"
-for ACT in RAADBG; do
+for ACT in $RAADBG; do
 	echo "-->$ACT"
 	case $ACT in
 		'MOUNTPROC')
