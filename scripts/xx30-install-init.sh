@@ -5,6 +5,9 @@ set -e
 source .config
 
 case $INIT in
+	DBG)
+		sudo cp -rv ./inits-type/dbg-init "$NEWROOT/init"
+		;;
 	MIN)
 		sudo cp -rv ./inits-type/min-init "$NEWROOT/init"
 		;;
