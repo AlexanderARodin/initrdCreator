@@ -45,7 +45,7 @@ activate-scripts:
 # #######################################
 # others
 
-reload-self: activate-scripts
-	@./scripts/xxxx-reload-self.sh
+reload-self:
+	@../launch-initrdCreator.sh
 
 
