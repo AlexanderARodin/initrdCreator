@@ -3,23 +3,19 @@
 
 function do_mount_proc {
 	[ -d /proc ] || mkdir /proc
-	mount -t proc     -o nodev,noexec,nosuid proc  /proc
+	mount -t proc proc  /proc
 }
 function do_mount_sys {
 	[ -d /sys ]  || mkdir /sys
-	mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
+	mount -t sysfs sysfs /sys
 }
 function do_mount_dev {
-	[ -d /dev ]  || mkdir -m 0755 /dev
-	mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
-}
-function do_mount_auto_dev {
-	[ -d /dev ]  || mkdir -m 0755 /dev
-	mount -o nosuid,mode=0755    udev  /dev
+	[ -d /dev ]  || mkdir /dev
+	mount -t devtmpfs devtmpfs  /dev
 }
 function do_mount_devpts {
 	[ -d /dev/pts ] || mkdir /dev/pts
-	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
+	mount -t devpts devpts /dev/pts
 }
 
 function do_run_shell {
@@ -41,9 +37,6 @@ for ACT in $RAADBG; do
 			;;
 		'DEV')
 			do_mount_dev
-			;;
-		'AUTODEV')
-			do_mount_auto_dev
 			;;
 		'DEVPTS')
 			do_mount_devpts
