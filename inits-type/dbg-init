@@ -22,6 +22,9 @@ function do_mount_devpts {
 	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
 }
 
+function do_run_shell {
+	exec setsid cttyhack /bin/sh
+}
 
 
 
@@ -50,7 +53,3 @@ for ACT in $RAADBG; do
 			;;
 	esac
 done
-
-
-echo 'RUN SHELL'
-exec setsid cttyhack /bin/sh
