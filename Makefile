@@ -44,6 +44,10 @@ activate-scripts:
 	
 # #######################################
 # others
+reinstall-only:
+	@echo '[MAKE INSTALL]'
+	@./scripts/xx90-initrd-producing.sh
+	
 
 reload-self:
 	@cd ..; ./launch-initrdCreator.sh
