@@ -3,11 +3,11 @@
 
 function do_mount_proc {
 	[ -d /proc ] || mkdir /proc
-	mount -t proc proc  /proc
+	mount -t proc proc    /proc      -o nodev,noexec,nosuid
 }
 function do_mount_sys {
 	[ -d /sys ]  || mkdir /sys
-	mount -t sysfs sysfs /sys
+	mount -t sysfs sysfs  /sys       -o nodev,noexec,nosuid
 }
 function do_mount_udev {
 	[ -d /dev ]  || mkdir /dev
@@ -19,7 +19,7 @@ function do_mount_mdev {
 }
 function do_mount_devpts {
 	[ -d /dev/pts ] || mkdir /dev/pts
-	mount -t devpts devpts /dev/pts
+	mount -t devpts devpts   /dev/pts -o noexec,nosuid,gid=5,mode=0620
 }
 
 function do_run_shell {
