@@ -10,11 +10,11 @@ function do_mount_sys {
 	mount -t sysfs sysfs  /sys       -o nodev,noexec,nosuid
 }
 function do_mount_udev {
-	[ -d /dev ]  || mkdir /dev
+	[ -d /dev ]  || mkdir -m 0755 /dev
 	mount -t devtmpfs udev  /dev
 }
 function do_mount_mdev {
-	[ -d /dev ]  || mkdir /dev
+	[ -d /dev ]  || mkdir -m 0755 /dev
 	mount -t devtmpfs mdev  /dev
 }
 function do_mount_devpts {
