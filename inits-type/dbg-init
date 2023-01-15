@@ -27,8 +27,8 @@ function do_run_shell {
 }
 
 
-
-echo [DBG_INIT ENTRY'
+echo
+echo 'DBG_INIT ENTRY'
 echo "RAADBG=$RAADBG"
 for ACT in $RAADBG; do
 	echo "-->$ACT"
