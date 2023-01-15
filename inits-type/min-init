@@ -10,6 +10,6 @@ mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
 mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
 
 	[ -d /dev/pts ] || mkdir /dev/pts
-	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
+	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts
 
 exec setsid cttyhack /bin/sh
