@@ -46,6 +46,6 @@ activate-scripts:
 # others
 
 reload-self:
-	@../launch-initrdCreator.sh
+	@cd ..; ./launch-initrdCreator.sh
 
 
