@@ -5,12 +5,12 @@
 [ -d /sys ]  || mkdir /sys
 [ -d /dev ]  || mkdir -m 0755 /dev
 
-mount -t proc     -o nodev,noexec,nosuid proc  /proc
-mount -t sysfs    -o nodev,noexec,nosuid sysfs /sys
-mount -t devtmpfs -o nosuid,mode=0755    udev  /dev
+mount -t proc      proc  /proc
+mount -t sysfs     sysfs /sys
+mount -t devtmpfs  mdev  /dev
 
 	[ -d /dev/pts ] || mkdir /dev/pts
-	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts || true
+	mount -t devpts   -o noexec,nosuid,gid=5,mode=0620 devpts /dev/pts
 
 
 # others
