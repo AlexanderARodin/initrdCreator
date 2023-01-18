@@ -14,6 +14,10 @@ run-mounted: activate-scripts
 	
 # #######################################
 # main chain
+reinstall-only:
+	@echo '[MAKE INSTALL]'
+	@./scripts/xx90-initrd-producing.sh
+	
 install: activate-scripts processing
 	@echo '[MAKE INSTALL]'
 	@./scripts/xx90-initrd-producing.sh
