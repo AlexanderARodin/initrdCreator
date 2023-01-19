@@ -5,9 +5,12 @@ source .config
 
 echo "--> BINARIES.."
 
-echo "--> recopy BusyBox.."
-[ -d "$BINARY_BBDyn" ] && sudo cp -rv "$BINARY_BBDyn/"* "$NEWROOT/"
+if [ -d "$BINARY_BBDyn" ]; then
+	echo "--> recopy BusyBox.."
+	sudo cp -rv "$BINARY_BBDyn/"* "$NEWROOT/"
+fi
 
-echo "--> OTHERS bins.."
-[ -d "$BINARY_OTHERS" ] && sudo cp -rv "$BINARY_OTHERS/"* "$NEWROOT/"
-
+if [ -d "$BINARY_OTHERS" ]; then
+	echo "--> OTHERS bins.."
+	sudo cp -rv "$BINARY_OTHERS/"* "$NEWROOT/"
+fi
