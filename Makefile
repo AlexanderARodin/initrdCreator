@@ -22,9 +22,13 @@ install: activate-scripts processing
 	@echo '[MAKE INSTALL]'
 	@./scripts/xx90-initrd-producing.sh
 	
-processing: activate-scripts insert-init
+processing: activate-scripts copy-binary
 	@echo '[MAKE PROCESSING]'
 	@./scripts/xx50-processing.sh
+
+copy-binary: activate-scripts insert-init
+	@echo '[MAKE PROCESSING]'
+	@./scripts/xx40-copy-binary.sh
 
 insert-init: activate-scripts busybox
 	@echo '[MAKE INSERTING INIT]'
