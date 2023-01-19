@@ -6,5 +6,5 @@ source .config
 echo "pack initrd: $INITRD"
 cd $NEWROOT
 sudo rm -vf $INITRD
-find . | cpio -o -H newc | gzip > $INITRD
+sudo find . | cpio -o -H newc | gzip > $INITRD
 sudo cp -v $INITRD $INSTALL_DIR
