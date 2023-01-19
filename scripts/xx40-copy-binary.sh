@@ -5,6 +5,6 @@ source .config
 
 
 echo "--> BINARIES.."
-sudo cp -rv "$BINARY_DIR/*" "$NEWROOT"
+sudo cp -rv "$BINARY_DIR/*" "$NEWROOT/"
 
 
