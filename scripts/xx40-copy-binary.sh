@@ -5,6 +5,7 @@ source .config
 
 
 echo "--> BINARIES.."
-sudo cp -rv "$BINARY_DIR/"* "$NEWROOT/"
+[ -d "$BINARY_BBDyn" ] && sudo cp -rv "$BINARY_BBDyn/"* "$NEWROOT/"
 
+[ -d "$BINARY_OTHERS" ] && sudo cp -rv "$BINARY_OTHERS/"* "$NEWROOT/"
 
