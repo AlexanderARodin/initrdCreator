@@ -15,7 +15,7 @@ run-mounted: activate-scripts
 # #######################################
 # main chain
 reinstall-only:
-	@echo '[MAKE INSTALL]'
+	@echo '[MAKE REinstall ONLY]'
 	@./scripts/xx90-initrd-producing.sh
 	
 install: activate-scripts processing
@@ -27,7 +27,7 @@ processing: activate-scripts copy-binary
 	@./scripts/xx50-processing.sh
 
 copy-binary: activate-scripts insert-init
-	@echo '[MAKE PROCESSING]'
+	@echo '[MAKE COPY BINARIES]'
 	@./scripts/xx40-copy-binary.sh
 
 insert-init: activate-scripts busybox
