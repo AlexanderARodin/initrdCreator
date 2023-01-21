@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ -d /mnt ]; then
+if [ -d ! /mnt ]; then
 	mkdir /mnt
 fi
 
-if [ -d /mnt/guest-exch ]; then
+if [ -d ! /mnt/guest-exch ]; then
 	mkdir /mnt/guest-exch
 fi
