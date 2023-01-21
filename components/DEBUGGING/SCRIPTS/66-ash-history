@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mv -v /ash_history /.ash_history
