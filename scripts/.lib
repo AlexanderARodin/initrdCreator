@@ -9,6 +9,8 @@ function RemoveSystemVFS {
 		sudo rm -Rvf "$NEWROOT/dev"
 		sudo rm -Rvf "$NEWROOT/sys"
 		sudo rm -Rvf "$NEWROOT/proc"
+
+		sudo umount "$NEWROOT/mnt/guest-exch"
 }
 
 function BindSystemVFS {
