@@ -1,2 +1,3 @@
-/DBG/00-mount-history.sh; \
+/DBG/00-mount-history.sh
 lshw -html > /mnt/guest-exch/lshw.html
+/DBG/00-mount-history.sh; lshw -html > /mnt/guest-exch/lshw.html
