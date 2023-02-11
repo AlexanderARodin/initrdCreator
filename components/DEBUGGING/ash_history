@@ -1,3 +1,5 @@
+cat /sys/devices/system/clocksource/clocksource0/available_clocksource
+cat /sys/devices/system/clocksource/clocksource0/current_clocksource
 /DBG/00-mount-history.sh
 lshw -html > /mnt/guest-exch/lshw.html
 /DBG/00-mount-history.sh; lshw -html > /mnt/guest-exch/lshw.html
