@@ -1,6 +1,8 @@
 #!/bin/sh
 
-LIST="virtio_blk virtio_net"
+LIST="\
+ virtio_blk\
+ failover virtio_net"
 
 
 for aModule in $LIST; do
