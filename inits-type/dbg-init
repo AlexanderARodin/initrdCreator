@@ -14,6 +14,8 @@ function do_mount_udev {
 	mount -t devtmpfs udev  /dev
 }
 function do_mount_mdev {
+	echo /sbin/mdev > /proc/sys/kernel/hotplug
+	mdev -s
 	[ -d /dev ]  || mkdir -m 0755 /dev
 	mount -t devtmpfs mdev  /dev
 }
