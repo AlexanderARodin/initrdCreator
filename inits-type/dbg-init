@@ -1,30 +1,32 @@
 #!/bin/sh
 
 
-function do_mount_proc {
+function doPROCmounting {
 	[ -d /proc ] || mkdir /proc
 	mount -t proc proc    /proc      -o nodev,noexec,nosuid
 }
-function do_mount_sys {
+function doSYSmounting {
 	[ -d /sys ]  || mkdir /sys
 	mount -t sysfs sysfs  /sys       -o nodev,noexec,nosuid
 }
-function do_mount_udev {
+function doUDEVmounting {
 	[ -d /dev ]  || mkdir -m 0755 /dev
 	mount -t devtmpfs udev  /dev
 }
-function do_mount_mdev {
-	echo /sbin/mdev > /proc/sys/kernel/hotplug
-	mdev -s
+function doMDEVmounting {
 	[ -d /dev ]  || mkdir -m 0755 /dev
 	mount -t devtmpfs mdev  /dev
 }
-function do_mount_devpts {
+function doDEVPTSmounting {
 	[ -d /dev/pts ] || mkdir /dev/pts
 	mount -t devpts devpts   /dev/pts -o noexec,nosuid,gid=5,mode=0620
 }
 
-function do_run_shell {
+function doMODULESloading {
+
+}
+
+function doSHELLrunning {
 	exec setsid cttyhack /bin/sh
 }
 
@@ -37,22 +39,25 @@ for ACT in $RAADBG; do
 	echo "-->$ACT"
 	case $ACT in
 		'PROC')
-			do_mount_proc
+			doPROCmounting
 			;;
 		'SYS')
-			do_mount_sys
+			doSYSmounting
 			;;
 		'UDEV')
-			do_mount_udev
+			doUDEVmounting
 			;;
 		'MDEV')
-			do_mount_mdev
+			doMDEVmounting
 			;;
 		'DEVPTS')
-			do_mount_devpts
+			doDEVPTSmounting
 			;;
 		'SHELL')
-			do_run_shell
+			doSHELLrunning
+			;;
+		'MODULES')
+			doMODULESloading
 			;;
 		*)
 			echo "unsupported.. IGNORED"
