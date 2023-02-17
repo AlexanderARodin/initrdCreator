@@ -2,7 +2,7 @@
 
 LIST="\
  virtio_blk\
- failover virtio_net"
+ virtio_net"
 
 
 for aModule in $LIST; do
