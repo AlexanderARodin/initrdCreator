@@ -23,7 +23,8 @@ function doDEVPTSmounting {
 }
 
 function doMODULESloading {
-
+	echo
+	echo 'MODULES loading..'
 }
 
 function doSHELLrunning {
