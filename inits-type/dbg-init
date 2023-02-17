@@ -24,6 +24,7 @@ function doDEVPTSmounting {
 
 function doMODULESloading {
 	echo 'loading..'
+	/DBG/999-preloadModules.sh
 }
 
 function doSHELLrunning {
