@@ -4,5 +4,6 @@ LIST='virtio_net'
 
 
 for aModule in $LIST; do
-  echo "$aModule.."
+  echo -n "$aModule.."
+  echo "OK"
 done
