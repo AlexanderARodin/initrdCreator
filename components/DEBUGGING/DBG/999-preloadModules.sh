@@ -4,12 +4,11 @@ LIST="\
  virtio_net\
  virtio_blk\
  virtio_scsi\
- sg sd_mod sr_mod\
+ sg sd_mod 'sleep 5' sr_mod\
  "
 
 
 for aModule in $LIST; do
-	sleep 0.01
 	echo "$aModule.."
 	if modprobe $aModule ; then
 		echo "$aModule.. ..OK"
