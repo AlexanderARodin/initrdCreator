@@ -4,7 +4,6 @@ LIST="\
  virtio_net\
  virtio_blk\
  virtio_scsi\
- sd_mod sr_mod\
  isofs\
  "
 
