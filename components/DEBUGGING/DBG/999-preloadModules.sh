@@ -9,6 +9,7 @@ LIST="\
 
 
 for aModule in $LIST; do
+	sleep 0.01
 	echo "$aModule.."
 	if modprobe $aModule ; then
 		echo "$aModule.. ..OK"
