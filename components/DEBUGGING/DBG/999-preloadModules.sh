@@ -3,7 +3,7 @@
 LIST="\
  virtio_net\
  virtio_blk\
- sg sd_mod\
+ sg sd_mod sr_mod\
  virtio_scsi\
  "
 
