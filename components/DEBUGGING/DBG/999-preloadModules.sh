@@ -6,10 +6,9 @@ LIST="\
 
 
 for aModule in $LIST; do
-	echo -n "$aModule.."
 	if modprobe $aModule ; then
-		echo "OK"
+		echo "$aModule..OK"
 	else
-		echo "ERR!!"
+		echo "$aModule..ERR!!"
 	fi
 done
