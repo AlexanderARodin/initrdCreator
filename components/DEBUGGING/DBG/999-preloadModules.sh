@@ -1,8 +1,11 @@
 #!/bin/sh
 
 LIST="\
+ virtio_net\
  virtio_blk\
- virtio_net"
+ virtio_scsi\
+ sd_mod sr_mod sg\
+ "
 
 
 for aModule in $LIST; do
